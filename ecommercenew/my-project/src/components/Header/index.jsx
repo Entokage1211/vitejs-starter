@@ -8,6 +8,7 @@ import { FaCartShopping } from "react-icons/fa6";
 import { FaCodeCompare } from "react-icons/fa6";
 import { FaRegHeart } from "react-icons/fa";
 import Tooltip from '@mui/material/Tooltip';
+import Navigation from './Navigation';
 
 
 
@@ -23,7 +24,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 export const Header = () => {
     return (
-        <header>
+        <header className="bg-white">
             <div className="top-strip py-2 border-t-[1px] border-gray-250 border-b-[1px]">
 
                 <div className="container">
@@ -47,7 +48,7 @@ export const Header = () => {
                 </div>
             </div>
 
-            <div className="header">
+            <div className="header py-4 border-b-[1px] border-gray-250">
                 <div className="container flex items-center justify-between">
                     <div className="col1 w-[25%]">
                         <Link to={"/"}><img src="/logo.jpg" /></Link>
@@ -96,6 +97,9 @@ export const Header = () => {
                     </div>
                 </div>
             </div>
+
+            <Navigation />
+
         </header>
     )
 }
