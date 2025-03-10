@@ -5,7 +5,10 @@ import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import { FaCartShopping } from "react-icons/fa6";
-import { IoMdMail } from "react-icons/io";
+import { FaCodeCompare } from "react-icons/fa6";
+import { FaRegHeart } from "react-icons/fa";
+import Tooltip from '@mui/material/Tooltip';
+
 
 
 
@@ -53,26 +56,41 @@ export const Header = () => {
                         <Search />
                     </div>
                     <div className="col3 w-[30%] flex items-center pl-7">
-                        <ul className="flex items-center gap-3">
+                        <ul className="flex items-center justify-end gap-3 w-full">
+
                             <li className="list-none">
                                 <Link to="/login" className="link transition text-[15px] font-[500]">Login</Link> | &nbsp;
                                 <Link to="/register" className="link transition text-[15px] font-[500]">Register</Link>
                             </li>
 
                             <li>
-                                <IconButton aria-label="cart">
-                                    <StyledBadge badgeContent={4} color="secondary">
-                                        <FaCartShopping />
-                                    </StyledBadge>
-                                </IconButton>
+                                <Tooltip title="Compare">
+                                    <IconButton aria-label="compare">
+                                        <StyledBadge badgeContent={4} color="secondary">
+                                            <FaCodeCompare />
+                                        </StyledBadge>
+                                    </IconButton>
+                                </Tooltip>
                             </li>
 
                             <li>
-                                <IconButton aria-label="mail">
-                                    <StyledBadge badgeContent={4} color="secondary">
-                                        <IoMdMail />
-                                    </StyledBadge>
-                                </IconButton>
+                                <Tooltip title="Wishlist">
+                                    <IconButton aria-label="heart">
+                                        <StyledBadge badgeContent={4} color="secondary">
+                                            <FaRegHeart />
+                                        </StyledBadge>
+                                    </IconButton>
+                                </Tooltip>
+                            </li>
+
+                            <li>
+                                <Tooltip title="Cart">
+                                    <IconButton aria-label="cart">
+                                        <StyledBadge badgeContent={4} color="secondary">
+                                            <FaCartShopping />
+                                        </StyledBadge>
+                                    </IconButton>
+                                </Tooltip>
                             </li>
                         </ul>
                     </div>
